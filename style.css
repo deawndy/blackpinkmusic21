@@ -1,0 +1,764 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap');
+
+:root{
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  list-style: none;
+  transition: all .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar{
+  width: .6rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: black;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: pink;
+}
+
+section{
+  padding: 3rem 7%;
+}
+
+.heading{
+  font-size: 4rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.btn{
+  margin-top: 1rem;
+  background: pink;
+  color: black;
+  display: inline-block;
+  border-radius: 5rem;
+  box-shadow: white;
+  padding: 1rem 4rem;
+  font-size: 1.7rem;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.btn::before,
+.btn::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: white;
+  z-index: -1;
+  transition: .3s linear;
+}
+
+.btn::before{
+  left: 0;
+}
+
+.btn::after{
+  right: 0;
+}
+
+.btn:hover::before,
+.btn:hover::after{
+  width: 100%;
+}
+
+a {
+  color: pink;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+/* Header */
+.header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 9%;
+  background: black;
+  box-shadow: var(--box-shadow);
+}
+
+.header .logo img{
+  width: 140px;
+  line-height: 10px;
+  padding: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.header .navbar a{
+  font-size: 18px;
+  color: pink;
+  margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+  color: white;
+}
+
+#menu{
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: pink;
+  display: none;
+}
+/* End */
+
+/* Home */
+.home{
+  display: flex;
+  align-items: center;
+  background: url(./images/home.jpeg) no-repeat center fixed;
+  min-height: 110vh;
+  background-size: cover;
+  background-position: center;
+}
+/* End */
+
+/* About */
+.about {
+  background: black;
+}
+
+.about h1 {
+  color: pink;
+}
+
+.about .row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about .row .content{
+  flex: 1 1 40rem;
+}
+
+.about .row .content h3{
+  font-size: 2.5rem;
+  color: pink;
+  padding: 1rem 0;
+}
+
+.about .row .content p{
+  font-size: 1.4rem;
+  color: pink;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.about .row .image{
+  flex: 1 1 30rem;
+}
+
+.about .row .image video{
+  width: 100%;
+  height: 100%;
+}
+/* End */
+
+/* Artist */
+.member{
+  background: black;
+}
+
+.member .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 50px;
+}
+
+.member .box-container .box .image{
+  position: relative;
+  overflow: hidden;
+}
+
+.member .box-container .box .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+.member .box-container .box .image .share{
+  width: 7rem;
+  height: 38rem;
+  position: absolute;
+  left: -8rem; top: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+}
+
+.member .box-container .box .image:hover .share{
+  left: 0;
+}
+
+.member .box-container .box .image .share a{
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2.2rem;
+  color: #fff;
+  border: .1rem solid #fff;
+  text-align: center;
+}
+
+.member h1 {
+  color: pink;
+}
+
+.member .box-container .box .image .share a:hover{
+  background: #fff;
+  color: pink;
+}
+
+.member .box-container .box .content{
+  padding-top: 1rem;
+}
+
+.member .box-container .box .content h5{
+  color: pink;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.member .box-container .box .content h3{
+  font-size: 2.5rem;
+  color: pink;
+}
+
+/* End */
+
+/* Shop */
+.shop {
+background: pink;
+}
+
+.shop .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 50px;
+}
+
+.shop .box-container .box{
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.shop .box-container .box .image{
+  position: relative;
+  overflow: hidden;
+}
+
+.shop .box-container .box .image img{
+  width: 100%;
+}
+
+.shop .box-container .box:hover .image .share{
+  bottom: 0;
+}
+
+.shop .box-container .box .image .share{
+  position: absolute;
+  bottom: -10rem; left: 0; right: 0;
+  padding: 2rem;
+  background: rgba(255, 179, 211, 0.664);
+}
+
+.shop .box-container .box .image .share a{
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  margin: 0 1rem;
+  color: black;
+  background: white;
+  border-radius: .5rem;
+}
+
+.shop .box-container .box .image .share a:hover{
+  color: pink;
+  background: #fff;
+}
+
+.shop .box-container .box .content{
+  padding: 2rem;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.shop .box-container .box .content h3{
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.shop .box-container .box .content h5{
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #777;
+}
+/* End */
+
+/* Music */
+.listmusic {
+background: black;
+}
+
+.listmusic h1 {
+  color: pink;
+}
+
+.listmusic a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: pink;
+  color: black;
+  border-radius: 30px;
+}
+
+.container {
+  padding: 0;
+}
+
+.music-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:20px;
+  padding:20px 9%;
+}
+
+.music-container.active{
+  padding-bottom: 150px;
+}
+
+.music-container .box{
+  border-radius: 10px;
+  background:#fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  padding:15px;
+  cursor: pointer;
+}
+
+.music-container .box .image{
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.music-container .box .image img{
+  width:100%;
+  object-fit: cover;
+}
+
+.music-container .box .image audio {
+  width: 100%;
+  outline: none;
+}
+
+.music-container .box .content{
+  padding-top: 15px;
+}
+
+.music-container .box .content h3{
+  font-size: 20px;
+  text-align: center;
+  color:#333;
+  margin-bottom: 10px;
+}
+
+.music-player{
+  position: fixed;
+  bottom: -125px; left:0; right:0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.music-player.active{
+  bottom: 0;
+}
+
+.music-player .music-title{
+  font-size: 25px;
+  margin-bottom: 5px;
+  border-top: 3px solid #333;
+  border-bottom: 1px solid #333;
+  text-align: center;
+  color:#333;
+  padding:10px;
+}
+
+.music-player audio{
+  width: 100%;
+}
+
+.music-player audio::-webkit-media-controls-enclosure{
+  border-radius: 0;
+  background: #fff;
+}
+
+.music-player #close-player{
+  position: absolute;
+  top:-50px; right:5px;
+  height: 50px;
+  width: 55px;
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 30px;
+  color:#333;
+  background: #fff;
+  border:3px solid #333;
+  border-bottom: none;
+  text-align: center;
+}
+
+/* end */
+
+/* Video */
+.listvideo {
+  background: pink;
+  align-items: center;
+}
+
+.listvideo h1 {
+color: black;
+}
+
+.listvideo a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: black;
+  color: pink;
+  border-radius: 30px;
+}
+
+/* Slideshow container */
+.container {
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+/* Slideshow container */
+.content-slide {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.imgslide {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    color: rgb(255, 254, 224);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+}
+
+.text {
+    color: #fafafa;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.content-slide .numberslide {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+/* End */
+
+/* Tour */
+.tour {
+background: black;
+}
+
+.tour h1 {
+color: pink;
+}
+
+.row {
+  margin-bottom: 50px;
+}
+
+.tour .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.tour .row table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  color: pink;
+  background: whitesmoke;
+  font-size: 18px;
+}
+
+.tour .row table th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+.tour a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: pink;
+  color: white;
+  border-radius: 30px;  
+}
+
+.tour .row table tr:nth-child(even) {
+  background-color: black;
+}
+/* end */
+
+/* footer */
+.footer{
+  background: pink;
+  text-align: center;
+}
+
+.footer .share{
+  padding: 1rem 0;
+}
+
+.footer .share a{
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+  border: .1rem solid var(--primary-color);
+  margin: .3rem;
+  border-radius: 50%;
+}
+
+.footer .share a:hover{
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.footer .credit{
+  font-size: 2rem;
+  color: var(--black);
+  padding: 1.5rem;
+  font-weight: lighter;
+}
+
+.footer .credit span{
+  color: var(--primary-color);
+}
+
+/* end */
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  body{
+    display: flexbox;
+  }
+
+  #menu{
+    display: inline-block;
+  }
+
+  .header .navbar{
+    position: absolute;
+    top: 110%; right: -110%;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: black;
+  }
+
+  .header .navbar.active{
+    right: 2rem;
+    transition: .4s linear;
+  }
+
+  .header .navbar a{
+    font-size: 2rem;
+    margin: 2rem 2.5rem;
+    display: block;
+  }
+
+  .home .content h3{
+    font-size: 5rem;
+  }
+
+  .image {
+  width: 100%;
+  }
+
+  .tour .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .tour .row table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    color: pink;
+    background: whitesmoke;
+    font-size: 8px;
+  }
+  
+  .tour .row table th, td {
+    text-align: left;
+    padding: 13px;
+  }
+
+  .tour a {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: pink;
+    color: white;
+    border-radius: 20px;  
+  }
+}
+
+/* Responsive Music */
+
+@media (max-width:768px) {
+  .container .music-container{
+    padding:20px;
+  }
+}
+
+@media (max-width:450px) {
+  .container .music-container{
+    grid-template-columns: 1fr;
+  }
+
+  .container .music-container .box .image{
+    height: 300px;
+  }
+}
+
+/* resposive video*/
+@media screen and (max-width: 800px) {
+
+  .content-slide {
+      padding: 8px 50px 12px 50px;
+  }
+
+  .next {
+      right: 50px;
+      border-radius: 3px 0 0 3px;
+  }
+  
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+      opacity: .4;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+      opacity: .4;
+  }    
+  to {
+      opacity: 1;
+  }
+}
+
+.container .page {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.page .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  border-radius: 50%;
+}
+
+.page .active,
+.page .dot:hover {
+  background-color: #ce0000;
+}
+
